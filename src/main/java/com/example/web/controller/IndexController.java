@@ -48,13 +48,14 @@ public class IndexController {
     public String mainPage(HttpSession session,Model model){
 
         //是否登录      拦截器
-        Object loginUser = session.getAttribute("loginUser");
-        if(loginUser != null){
-            return "index";
-        }else {
-            //登录不成功，回到登录login界面
-            model.addAttribute("msg","请重新登录！");
-            return "login";
-        }
+//        Object loginUser = session.getAttribute("loginUser");
+//        if(loginUser != null){
+//            return "index";
+//        }else {
+//            //登录不成功，回到登录login界面
+//            model.addAttribute("msg","请重新登录！");
+//            return "login";
+//        }
+        return "index";
     }
 }
