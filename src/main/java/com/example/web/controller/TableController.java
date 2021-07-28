@@ -1,9 +1,11 @@
 package com.example.web.controller;
 
 import com.example.web.bean.User;
+import com.example.web.exception.UserTooMuchException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +33,9 @@ public class TableController {
                 new User("xk05", "123"),
                 new User("xk06", "123"));
         model.addAttribute("users",users);
+//        if(users.size()>3){
+//            throw new UserTooMuchException("用户数量太多！！！");
+//        }
         return "table/responsive_table";
     }
 
@@ -50,7 +55,8 @@ public class TableController {
     }
 
     @GetMapping("basic_table.html")
-    public String basic_table(){
+    public String basic_table(@RequestParam("a") int a){
+//        int i = 10/0;//此处属于算数异常
         return "/table/basic_table";
     }
 }
