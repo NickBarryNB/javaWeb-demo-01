@@ -1,11 +1,16 @@
 package com.example.web.controller;
 
+import com.example.web.bean.Account;
 import com.example.web.bean.User;
+import com.example.web.service.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +22,10 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class IndexController {
+
+    @Autowired
+    AccountService accountService;
+
     /**
      * 登录页配置
      * @return
@@ -57,5 +66,16 @@ public class IndexController {
 //            return "login";
 //        }
         return "index";
+    }
+
+    /**
+     * 返回通过参数id查询对应的用户id
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @GetMapping("/account")
+    public Account getUserId(@RequestParam("id") int id){
+        return accountService.getId(id);
     }
 }

@@ -26,13 +26,13 @@ public class TableController {
     }
     @GetMapping("/responsive_table.html")
     public String responsive_table(Model model){
-        List<User> users = Arrays.asList(new User("xk01", "123"),
-                new User("xk02", "123"),
-                new User("xk03", "123"),
-                new User("xk04", "123"),
-                new User("xk05", "123"),
-                new User("xk06", "123"));
-        model.addAttribute("users",users);
+//        List<User> users = Arrays.asList(new User("xk01", "123"),
+//                new User("xk02", "123"),
+//                new User("xk03", "123"),
+//                new User("xk04", "123"),
+//                new User("xk05", "123"),
+//                new User("xk06", "123"));
+//        model.addAttribute("users",users);
 //        if(users.size()>3){
 //            throw new UserTooMuchException("用户数量太多！！！");
 //        }
