@@ -3,6 +3,7 @@ package com.example.web.controller;
 import com.example.web.bean.Account;
 import com.example.web.bean.User;
 import com.example.web.service.AccountService;
+import com.example.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +26,7 @@ public class IndexController {
 
     @Autowired
     AccountService accountService;
+
 
     /**
      * 登录页配置

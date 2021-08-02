@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
  * @Date 2021/7/30 15:02
  * @Description
  */
-//@Mapper
+@Mapper
 public interface AccountMapper {
     @Select("select * from user where id = #{id}")
     public Account getById(Integer id);
